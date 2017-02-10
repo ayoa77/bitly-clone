@@ -1,2 +1,37 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<div text-align="center">
+  <h1>Link Munch</h1>
+    <div>
+    <img class ='display' src="https://image.spreadshirtmedia.com/image-server/v1/compositions/1013124134/views/1,width=300,height=300,version=1474862661/funny-smiley-monster-om-nom-nom-face-underwear-women-s-hip-hugger-underwear.jpg" alt="Hungry Smiley Face" align="center" style="width:304px;height:228px;"/>
+  </div>
+    <p>Give me urls to eat!</p>
+    <form id="url-form" action="/urls" method="POST">
+                  Feed me:
+        <input  type="text" name="long_url" value="http://">
+        <input type="submit" value="NOM">
+    </form>
+    <ul>
+        <% if !@error.nil? %>
+        <% @error.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+        <%end%>
+    </ul>
+
+ </div>
+ <div>
+  <p><% @error %></p>
+      <table width = 550px>
+
+          <th align = LEFT> Webpage </th>
+          <th align = Center> Munchies</th>
+          <th align = RIGHt> Digested</th>
+
+            <% @list.each do |list| %>
+            <tr>
+              <td align = LEFT><%= list.long_url %></a></td>
+              <td align = Center><a href="http://localhost:9393/<%= list.short_url %>">http://localhost:9393/<%= list.short_url %></a></td>
+              <td align = RIGHT><%= list.click_count %></td>
+            </tr>
+            <% end %>
+        </table>
+</div>
