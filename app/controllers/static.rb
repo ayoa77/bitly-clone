@@ -9,7 +9,6 @@ end
 post '/urls' do
   url = Url.new()
   @input = params[:long_url]
-  byebug
   url.long_url = @input
   url.short_url = url.shorten
 

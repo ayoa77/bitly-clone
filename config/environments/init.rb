@@ -4,7 +4,7 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 # Perform requiring gem that we need
 ######################################################################
 	# basic
-require 'rubygems'
+# require 'rubygem'
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 require 'pathname'
 
@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'uri'
 require 'byebug'
+require 'bcrypt'
 ######################################################################
 
 

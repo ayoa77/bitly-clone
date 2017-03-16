@@ -1,8 +1,12 @@
+require 'securerandom'
+require 'validate_url'
+
 class Url < ActiveRecord::Base
 validates :long_url, presence:{ message: "FEED him something!" }
-validates_format_of :long_url, :with => URI::regexp(%w(http https)), :message => "Enter a valid url, please!"
+# validates_format_of :long_url, :with => URI::regexp(%w(http https)), :message => "Enter a valid url, please!"
+validates :long_url, :url => true
   def shorten
-      short = ([*('A'..'Z'),*('0'..'9'),*('a'..'z')]-%w(0 1 I O)).sample(7).join('')
+      short = SecureRandom.hex(3)
       short
   end
 end

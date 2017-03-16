@@ -18,6 +18,8 @@
     </ul>
 
  </div>
+ <div id="added">
+ </div>
  <div>
   <p><% @error %></p>
       <table width = 550px>
@@ -29,7 +31,7 @@
             <% @list.each do |list| %>
             <tr>
               <td align = LEFT><%= list.long_url %></a></td>
-              <td align = Center><a href="http://localhost:9393/<%= list.short_url %>">http://localhost:9393/<%= list.short_url %></a></td>
+              <td align = Center><a href="https://linkmuncher.herokuapp.com/<%= list.short_url %>">https://linkmuncher.herokuapp.com/<%= list.short_url %></a></td>
               <td align = RIGHT><%= list.click_count %></td>
             </tr>
             <% end %>

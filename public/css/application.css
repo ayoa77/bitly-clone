@@ -1,3 +1,8 @@
+#added{
+text-align: center;
+
+}
+
 form{text-align: center;
 }
 div{align: auto;
@@ -41,7 +46,7 @@ td {
     border-bottom: 1px solid #B7C3FF;
     color: grey;
 }
-tr:hover{background-color: #B7C3FF}
+td:hover{background-color: #B7C3FF}
 
 .display {
   display: block;
