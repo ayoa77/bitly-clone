@@ -4,10 +4,16 @@
     <img class ='display' src="https://image.spreadshirtmedia.com/image-server/v1/compositions/1013124134/views/1,width=300,height=300,version=1474862661/funny-smiley-monster-om-nom-nom-face-underwear-women-s-hip-hugger-underwear.jpg" alt="Hungry Smiley Face" align="center" style="width:304px;height:228px;"/>
   </div>
     <p>Give me urls to eat!</p>
-    <form id="url-form" action="/urls" method="POST">
-                  Feed me:
-        <input  type="text" name="long_url" value="http://">
-        <input type="submit" value="NOM">
+    <form style="width: 40%; margin-left: auto; margin-right: auto;"  id="url-form" action="/urls" method="POST">
+      Feed me:
+<div class="input-group">
+
+
+        <input  class = "form-control" type="text" name="long_url" id="url" value="http://">
+        <span class = "input-group-btn">
+        <input class = "btn btn-secondary" type="submit" value="NOM">
+      </span>
+      </div>
     </form>
     <ul>
         <% if !@error.nil? %>
@@ -22,18 +28,20 @@
  </div>
  <div>
   <p><% @error %></p>
-      <table width = 550px>
+      <table class ="table-hover active">
+        <tbody id="urltable" >
 
-          <th align = LEFT> Webpage </th>
-          <th align = Center> Munchies</th>
-          <th align = RIGHt> Digested</th>
+          <th > Webpage </th>
+          <th > Munchies</th>
+          <th > Digested</th>
 
             <% @list.each do |list| %>
             <tr>
-              <td align = LEFT><%= list.long_url %></a></td>
-              <td align = Center><a href="https://linkmuncher.herokuapp.com/<%= list.short_url %>">https://linkmuncher.herokuapp.com/<%= list.short_url %></a></td>
-              <td align = RIGHT><%= list.click_count %></td>
+              <td ><%= list.long_url %></a></td>
+              <td ><a href="https://linkmuncher.herokuapp.com/<%= list.short_url %>">https://linkmuncher.herokuapp.com/<%= list.short_url %></a></td>
+              <td><%= list.click_count %></td>
             </tr>
             <% end %>
+         </tbody>
         </table>
 </div>
