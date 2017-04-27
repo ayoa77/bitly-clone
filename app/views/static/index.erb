@@ -37,9 +37,9 @@
 
             <% @list.each do |list| %>
             <tr>
-              <td align = LEFT><%= list.long_url %></a></td>
-              <td align = Center><a href="https://linkmuncher.herokuapp.com/<%= list.short_url %>">https://linkmuncher.herokuapp.com/<%= list.short_url %></a></td>
-              <td align = RIGHT><%= list.click_count %></td>
+              <td ><%= list.long_url %></a></td>
+              <td ><a href="https://linkmuncher.herokuapp.com/<%= list.short_url %>">https://linkmuncher.herokuapp.com/<%= list.short_url %></a></td>
+              <td><%= list.click_count %></td>
             </tr>
             <% end %>
          </tbody>
